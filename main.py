@@ -1,10 +1,9 @@
 from flask import Flask
-import requests, threading, time
+import requests, threading, time, os
 app = Flask(__name__)
-
-BOT_TOKEN = "8913170172:AAEb-vQE_OUqUeCRcug5A1ZqisJPIhEuQg8"
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
 CHANNEL = "@cricket_prediction_ipl_psl"
-API_KEY = "a7663f38-a558-4337-b395-8249c9f7e377"
+API_KEY = os.environ.get("API_KEY")
 
 @app.route('/')
 def home():
